@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Tugas Praktikum Minggu3</title>
+</head>
+
+<body>
+    <p>Select theme : 
+        <select id="theme" onclick="mytheme()">
+		<option value="">select theme</option>
+        <option value="dark">dark mode</option>
+		<option value="light">light mode</option>
+        </select>
+    </p>
+
+    <h1>This is my website</h1>
+
+    <p>Select the season type today :
+        <select id="musim" onclick="season()">
+		<option value="">select season</option>
+        <option value="spring">spring</option>
+		<option value="autumn">autumn</option>
+		<option value="winter">winter</option>
+		<option value="rainy">summer</option>
+        </select>
+    </p>
+    <p id="text1"></p>
+
+    <p>Input number :
+        <input type="number" id="angka">
+        <input type="submit" value="Get Factorial" onclick="factorial()">
+    </p>
+    <p id="text2"></p>
+
+    <script type="text/javascript">
+
+        function mytheme() {
+            var theme = document.getElementById('theme').value;
+            if (theme == "dark") {
+                document.body.style.background = "black";
+                document.body.style.color = "white";
+            } else if (theme == "light") {
+                document.body.style.background = "white";
+                document.body.style.color = "black";
+            }
+        }
+
+        function season() {
+            var musim = document.getElementById("musim").value;
+
+            var text = "";
+            if (musim == "spring") {
+                text = "Wishing you a bright, warm, and beautiful Spring!";
+            } else if (musim == "autumn") {
+                text = "Happy Fall,May this Autumn be a harvest of happy times for you!";
+            } else if (musim == "winter") {
+                text = "Hope you ski on lotta fun this holiday season!";
+            } else if (musim == "summer") {
+                text = "I wish you a good summer. May you have a great time with your family!";
+            }
+            document.getElementById("text1").innerHTML = text;
+        }
+            
+		function factorial() {
+            var angka = document.getElementById("angka").value;
+            var hasil = 1;
+
+            var i = angka;
+            while (i != 0) {
+                hasil = hasil * i;
+                i--;
+            }
+
+            var text = "The factorial of " + angka + " is " + hasil;
+            document.getElementById("text2").innerHTML = text;
+        }
+
+	</script>
+</body>
+
+</html>
